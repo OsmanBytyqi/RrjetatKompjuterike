@@ -1,0 +1,580 @@
+\documentclass[]{article}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\newcommand{\red}{\color{red}}
+\usepackage[margin=1.2in]{geometry}
+
+\usepackage[albanian]{babel}
+
+\usepackage{xcolor}
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{Rrjetat Kompjuterike}
+\fancyfoot[CE,CO]{Komunikimi nepermjet Socketave}
+
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancyfoot[LE,RO]{\thepage}
+
+\usepackage[md]{titlesec}
+\usepackage[albanian]{babel}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+
+\usepackage{tikz}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+
+\usepackage{markdown}
+
+
+\usepackage{listings}
+\usepackage{color}
+\usepackage{xcolor}
+
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{black}{rgb}{0,0,0}
+
+\lstset{frame=tbrl,
+  language=python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=left,
+  numberstyle=\tiny\color{black},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+
+
+
+\begin{document}
+
+
+\date{}
+
+\title{\textsc{Universiteti i Prishtines "Hasan Prishtina" \\
+Fakulteti i Inxhinierise Elektrike dhe Kompjuterike}}
+
+\maketitle
+
+\begin{center}
+\vspace{-0.9cm}
+\includegraphics[scale=0.16]{../up.png}  
+
+
+\end{center}
+\vspace{0.2cm}
+\begin{center}
+
+
+\begin{huge}
+\textsc{Rrjetat Kompjuterike}\\
+\vspace{1cm}
+\textsc{Projekti: Dizajnimi Klient-Server
+}
+\end{huge}
+\vspace{1.4cm}
+
+\begin{flushleft}
+
+
+\vspace{1cm}
+% vertical space%
+\author{\textsc{Studenti:  \hspace{9cm}Prof.Dr:Blerim  Rexha\\}
+%vertical space between two rows%
+\vspace{-0.2cm}
+\begin{flushleft}
+\author{\textsc{Osman Bytyqi \hspace{8.2cm}MSc.Haxhi Lajqi}}
+
+\end{flushleft}
+}
+\end{flushleft}
+
+\end{center}
+
+\begin{center}
+
+
+
+\vspace*{1.7cm}
+
+\textsc{\date{Prill, 2021}}
+\end{center}
+\thispagestyle{empty}
+
+\newpage 
+
+\begin{abstract}
+\begin{center}
+
+
+Ky projekt ka te beje me protokollet qe lidhen me arkitekturen klient/server,thirrjet permes  soketave dhe operimet me socketa \textcolor{blue} {$TCP$} dhe \textcolor{blue}{$UDP$}.Ne kete projekt kemi krijuar protokollin $FIEK$ me versionet e tij $FIEK-TCP$ dhe $FIEK-UDP$, ku secili nga keta versione ka pjesen e klinetit dhe pjesen e serverit.Te protokolli $FIEK$ kemi keto funksione: IPADRESSA , NRPORTIT, NUMERO, ANASJELLTAS,  PALINDROME, KOHA, LOJA, GCF, KONVERTO, SQRT dhe KOHAEMARRJES te cilat dergohen nga $klineti$ tek $serveri$.
+Serveri pergjigjet specifikisht per secilen funksion dhe injoron qdo kerkese $jo-valide$
+
+
+\end{center}
+
+\end{abstract}
+\thispagestyle{empty}
+
+\newpage
+
+
+\tableofcontents
+\newpage
+\section{Mjedisi i punes}
+Qe nje projekt(punim) te filloje dhe ta kryej punen e planifikur eshte e domosdoshme mjedisi i punes. Patjeter qe gjate perpunimit te nje projekti mjedisi i punes ka rendesi i cili na percjell gjate punes sone qe nga fillimi deri ne fund. Ka shume rendesi njohja me hapesiren punuese dhe rolet qe kryejne secili perberes aty.
+Hapesira punuese perbehet nga keto komponente:
+sistemet operative, paisjet e ndryshme,  qe gjithmone duhet te jene te gatshme per punen qe planifikojme ta bejme; me poshte jane  cekur veglat pa te cilat perfundimi i ketij projekti do ishte i pamundur.
+\vspace*{1cm}
+\subsubsection{Sistemi  Operativ}
+\begin{itemize}
+\item Ubuntu 20.04.2 
+\end{itemize}
+\vspace*{0.3cm}
+
+\subsubsection{Veglat e punes}
+\begin{itemize}
+\item Visual Studio Code
+\item Python 3.7.2
+\item \LaTeX
+\end{itemize}
+
+\vspace*{0.3cm}
+
+\subsubsection{Funksionet e implemntuara}
+
+\begin{enumerate}
+
+
+\item IP-Adresa \checkmark
+\item NRPORTIT \checkmark
+\item NUMERO \checkmark
+\item ANASJELLTAS \checkmark
+\item PALINDROME \checkmark
+\item KOHA \checkmark
+\item LOJA \checkmark
+\item GCF\checkmark
+\item KONVERTO \checkmark
+\item KOHAEARRITJES\checkmark
+\item SQRT \checkmark  
+
+
+
+
+
+\end{enumerate}
+\newpage
+
+\section{Pershkrimi i Funksioneve}
+Funksioni eshte nje pjese e veqante e programit(nje nen-program), nje modul qe funksionon i pavarur nga pjesa tjteter e programit duke pranuar parametra hyres dhe kthyer rezultatin e llogaritjes  se bere perbrenda tij, ne pjesen e programit e cila ka thirrur funksionin.\\
+Si ne rastin tone qe kemi funksionin $IP$ apo $NRPORTIT$ te cilet kthejne rezultatet te caktuara si ip-adressen dhe nr e portit te klinetit.
+\vspace*{2cm}
+
+\subsubsection{IP}
+
+\begin{lstlisting}
+# Funskioni IP
+def IP(para):
+    return para[0]
+    #return paramteri
+\end{lstlisting}
+
+\begin{enumerate}
+\item Kerkesa:
+\begin{itemize}
+\item Klienti kerkon IP-Adressen
+\end{itemize}
+\item Aksioni
+\begin{itemize}
+\item Percakton dhe kthen IP adresen e klientit ne forme dhjetore
+me pike ne nje tekst mesazh
+\end{itemize}
+\item Pergjigja:
+\begin{itemize}
+\item Nje mesazh jo me i gjate se 128 karaktere qe permban IP e adresses se klientit
+\item Mesazhi nuk guxon te permbaje NULL karakter
+
+\end{itemize}
+\item Shtjellimi i Kodit:
+\begin{itemize}
+\item Ne Fillim duhet te startohet serveri dhe me pas klienti, tani vazhdojm  duke e shkruar kerkesen ku ne rastin tone eshte:$IP$ ose $ip$ nese gjate ekzkutimit nuk kemi ndonje problem ather do te paraqitet mesazhi me $IP$ e juaj, ne te kunderten do paraqitet ndonje mesazh informues per gabimin per gabimin qe ka nodhur.
+\end{itemize}
+\end{enumerate}
+\newpage
+
+\subsubsection{NRPORTI}
+
+
+\begin{lstlisting}
+#Funskioni   Nrporti
+def NRPORTI(para):
+    return para[1]
+    #return parametrin
+\end{lstlisting}
+\begin{enumerate}
+\item Kerkesa:
+\begin{itemize}
+\item Numeri i Portit
+\end{itemize}
+\item Aksioni:
+\begin{itemize}
+\item Percakton dhe kthen portitn e klinetit, \textcolor{red}{Ky duhet te jete porti i klientit dhe jo i serverit}!
+\end{itemize} 
+\item Pergjigja:
+\begin{itemize}
+\item Nje mesazh jo me i gjate se 128 karaktere qe përmban numrin e karaktereve ne tekst.
+\item  Mesazhi nuk guxon te permbaje NULL karakter
+
+\end{itemize}
+\item Shtejellimi i kodit
+\begin{itemize}
+\item Si fillim startohet serveri dhe me pas klineti, tani vazhdojm duke e shkruar kerkesen $NRPOTI$ ose $nrporti$.Nese nuk ka ndonje problem gjate dergimit te mesazhit apo kerkeses do te paraqitet mesazhi me portin ne te cilin jeni, ne te kunderten do te paraqitet nje mesazh informues ne lidhje me gabimin.
+\end{itemize}
+\end{enumerate}
+\newpage
+\subsubsection{NUMERO}
+
+\begin{lstlisting}
+#Fun Numero
+def NUMERO(para):
+    zanoret = 0
+    bashketingelloret = 0
+    for z in para:
+        if z in ['a','e','e','i','o','u','y','A','E','E','I','O','U','Y']:
+            zanoret += 1
+        elif z in ['b', 'c', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'x', 'z',
+                   'B', 'C', 'c', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'X', 'Z']:
+            bashketingelloret += 1 #inkremnti
+    x = "Zanore :" + str(zanoret) #inkremnti
+    y = "Bashketingellore : " + str(bashketingelloret)
+    return x, y
+    # dhe ne fund return x dhe y pas inkremntit
+
+\end{lstlisting}
+\begin{enumerate}
+\item Kerkesa:
+\begin{itemize}
+\item Zanoret dhe Bashktingllore
+\end{itemize}
+\item Aksioni
+\begin{itemize}
+\item Gjen numerin e zanoreve dhe bashktinglloreve dhe kthen pergjigjen
+\end{itemize}
+\item Pergjigja:
+\begin{itemize}
+\item Nje mesazh jo me i gjate se 128 karaktere qe permban numrin e karaktereve ne tekst
+\item Mesazhi nuk guxon te ket $NULL$ karakter
+\end{itemize}
+\item Shtjellimi i kodit:
+\begin{itemize}
+\item Pike se pari startojm serverin, keshtu qe vazhdojm te klienti duke e  shkruar $NUMERO$ funskionin, nese nuk ka ndonje problem gjate dergimit te mesazhit do te paraqitet mesazhi me numerin e zanoreve dhe bashtinglloreve per  fjaline te cilen e shkruan kilenti, por ne te kunderten do te paraqitet nje mesazh me per gabimin qe ka ndodhur.
+\end{itemize}
+\end{enumerate}
+\newpage
+\subsubsection{ANASJELLTAS}
+\begin{lstlisting}
+#funksoni anasjelltas
+def ANASJELLTAS(para):
+    fjalw = "" 
+    for i in para:
+        fjala = i +fjala
+    return fjala
+    #return fjalen e cila bohet reverse
+\end{lstlisting}
+\begin{enumerate}
+\item Kerkesa:
+\begin{itemize}
+\item Anasjelltas
+\end{itemize}
+\item Aksioni:
+\begin{itemize}
+\item Kthen fjalinë e shtypur ne tekst, hapesirat ne fillim dhe ne fund te fjalisë nuk duhet te kthehen
+\end{itemize}
+\item Pergjigja:
+\begin{itemize}
+\item Tekst
+\end{itemize}
+
+\item Shtejellimi i Kodit:
+\begin{itemize}
+\item Gjate thirrjese se funksionit $ANASJELLTAS$ dhe fjales qe deshironi te boni reverse athehere te klineti do te paraqitet ajo fjali vetem ne menyre reverse pra me renditje te kundert do te shfaqet fjala e dhe nga  klinetit edhe ketu per qdo gabim qe ndodh gjate ketij procesi serveri do e njoftoj klinetin ne lidhje me gabimin e ndodhur.
+\end{itemize}
+\end{enumerate}
+\newpage
+
+\subsubsection{PALINDROME}
+\begin{lstlisting}
+#funksioni Palindrome
+ if (para == para[:: - 1]): # :: :paraqet fillimin :mbarimin
+        x = "Teksti eshte polindrom"
+    else:
+        x = "teksti nuk eshte polindrom"
+    y = str(x) #vlera e y e kthejm ne string
+    return y
+
+\end{lstlisting}
+\begin{enumerate}
+\item Kerkesa:
+
+\begin{itemize}
+\item Palindrome tekst
+\end{itemize}
+\item Aksioni:
+\begin{itemize}
+\item Kerkon nje fjali dhe tregon a eshte palidrome a jo 
+\end{itemize}
+\item Pergjigja:
+\begin{itemize}
+\item Serveri tregon fjala e dhene a eshte palindrome 
+\end{itemize}
+\item Shtjellmi i Kodit:
+\begin{itemize}
+\item Kur e therrasim funksionin $PALINDROM$ eshte e domosdoshme qe ta shkruajm edhe nje fjale si parameter dhe pas kesaj serveri na kthen pergjigje por nese gjate kesaj rruge ka nodhur ndonje gabim athere serveri do na kthej nje mesazh informues ne lidhje me gabimin qe ka ndodhur.
+\end{itemize}
+\end{enumerate}
+\newpage
+\subsubsection{KOHA}
+\begin{lstlisting}
+#funksioni Koha i cili na kthen kohen aktuale
+from datetime import datetime #importojm nga librarite e gatshme
+def KOHA():
+    
+    x = datetime.now()
+    y = "Koha aktuale ne pasijen  tuaj eshte : " + str(x)
+    return y
+
+\end{lstlisting}
+\begin{enumerate}
+\item Kerkesa:
+\begin{itemize}
+\item Koha
+\end{itemize}
+\item Aksioni:
+\begin{itemize}
+\item Percakton kohen aktuale ne server dhe e dergon ate tek klienti si format te lexueshme per klinetin
+\end{itemize}
+\item Pergjigja:
+\begin{itemize}
+\item Kthen nje pergjigje e cila permban kohen dhe daten
+\end{itemize}
+\item Shtjellimi i kodit:
+\begin{itemize}
+\item Si fillim e startojm serverin dhe me pas edhe klinetin, mjafton te shkruhet nga ana e klientit $KOHA$ apo $koha$ dhe ne ekran do te shfaqet  
+mesazhi qe tregon kohen aktuale kjo ndodh duke i importuar librarite e gatshme si ne rastin tone $datetime$ qe e kemi importuar $from datatime$ 
+, por ne qofte se nodh ndonje gabim gjate ketij procesi athere e kemi mesazhin informues mbi detajet e gabimit qe ka ndodhur.
+\end{itemize}
+\end{enumerate}
+\newpage
+\subsubsection{LOJA}
+\begin{lstlisting}
+#fun loja
+def LOJA():
+    x = random.sample(range(1, 35), 5) #random e kemi importuar nga librarite e gatshme
+    y = "Numra te cfaredoshem ne rangun [1,35] : " + str(x)
+    return y
+\end{lstlisting}
+\begin{enumerate}
+\item Kerkesa:
+\begin{itemize}
+\item Loja
+\end{itemize}
+\item Aksioni:
+\begin{itemize}
+\item Kthen 5 numra nga rangu [1,35]
+\end{itemize}
+\item Pergjigja:
+\begin{itemize}
+\item Tekst p.sh(1,3,13,17,33)
+\end{itemize}
+\item Shjtellmi i kodit:
+\begin{itemize}
+\item Si te qdo funksion tjter edhe tek ky funksion ne fillim e startojm serverin, e shkruajm $LOJA$ apo $loja$ dhe permes $random$ qe e kemi importuar nga librarite e gatshme te $pythonit$ ne pergjigje do te shfaqen 5 numera te ndryshem ndermejt rangut $1$ dhe $35$, por nese diqka shkon jo ne menyren me te mire athere do te njoftohet klineti ne lidhje me qdo gabim qe ka ndodhur.
+
+
+\end{itemize}
+\end{enumerate}
+\newpage
+\subsubsection{GCF}
+\begin{lstlisting}
+# funskioni qe ngjen faktorin me te madh te perbashket
+def GCF(a, b):
+    if (b == 0):
+        return a
+    else:
+        return GCF(b, a % b) 
+        #% moduli apo mbetja nga pjestimi 
+\end{lstlisting}
+
+\begin{enumerate}
+\item Kerkesa:
+\begin{itemize}
+\item GCF  Numër1  Numër2
+\end{itemize}
+\item Aksioni:
+\begin{itemize}
+\item Gjen faktorin me te madh te perbashket ne mes dy numrave qe klienti jep.
+\end{itemize}
+\item Shtjellimi i kodit:
+\begin{itemize}
+\item Pranojm 2 parametra nga ana e klinetit qe ne kete rastin tone ja dy numera dhe athere funksioni qe e kemi krijuar do e gjej faktorin me te madhe te atyre numerave, por edhe nese gjithqka nuk shkon ne menyren me te mire athehre klineti do jete i informuar prej anes se serverit.
+\end{itemize}
+\end{enumerate}
+\newpage
+\subsubsection{KONVERTO}
+
+\begin{lstlisting}
+#fun konvertuesi
+def KONVERTO(a, b):
+    if a == "CMTOINCH": #cm->inch
+        x = 0.0328 * b
+        y = "" + str(x) + "in"
+        return y
+    elif a == "INCHTTOCM":
+        x = b / 0.032808
+        y = "" + str(x) + "cm"
+        return y
+    elif a == "KMTOMILES":
+        x = b * 0.62137
+        y = "" + str(x) + "miles"
+        return y
+    elif a == "MILESTOKM":
+        x = b / 0.62137
+        y = "" + str(x) + "km"
+        return y
+        #return y ne fund
+\end{lstlisting}
+\begin{enumerate}
+\item Kerkesa:
+\begin{itemize}
+\item Konvertimi
+\end{itemize}
+\item Aksioni:
+\begin{itemize}
+\item Kthen si rezultat konvertimin e opcioneve varesisht opcionit te zgjedhur $cmNeInch$, $inchNeCm$,$kmNeMiles$,$mileNeKm$ 
+\end{itemize}
+\item Pergjigja:
+\begin{itemize}
+\item Nese konvertojm $cmNeInch$ 10 kthen rezultatin $3.94 inch$
+\end{itemize}
+\item Shtjellmi i kodit:
+\begin{itemize}
+\item Si fillim shkruhet startohet serveri dhe mw pas klienti. Mw pas
+shkruhet kerkesa $konvertimi$ ose $KONVERTIMI$, pas hapsires
+shkruhet ne qka do te kthehet (konvertohet) dhe numri se
+qfar veprimi do te marresh. Nese nuk ka ndonje problem gjat
+dergimit te mesazhit, do te  paraqitet mesazhi me
+rezultatin e konvertuar sipas metodes konvertimi. Nese
+ndodh ndonje gabim do te kthej pergjigjet mbi informacionin e gabimit.
+\end{itemize}
+\end{enumerate}
+\newpage
+\subsubsection{KOHAEMBERRITJES}
+\begin{lstlisting}
+# funksioni i cili llogarite shpejtesine per 50km/h
+def KOHAEMBERRITJES(num):
+        num = float(num)
+        v = 50000/3600
+        t = num / v
+        pergjigja = "Per shpejtesi 50 km/h dhe per rrugen " + str(num) + " metra koha e mberritjes eshte " + str(t)+ " sekonda"
+        
+        return pergjigja
+        #return pergjigja e cila eshte e barabart me shpjetesine e llog
+
+
+\end{lstlisting}
+\begin{enumerate}
+\item Kerkesa:
+
+\begin{itemize}
+\item Koha e mberritjes
+\end{itemize}
+\item Aksioni:
+
+\begin{itemize}
+\item Gjate thirrjes  se funksionit si rezultat i parametrit qe eshte by default metra fitojm fitojm shpjetesine per ne sek
+\end{itemize}
+\item Shtjellimi i kodit:
+\begin{itemize}
+\item 11.
+Si fillim shkruhet startohet serveri dhe me pas klienti. Me pas
+shkruhet kerkesa $ KOHAEMBERRITJES$.
+Nese nuk ka ndonje problem gjat dergimit te mesazhit, do tw paraqitet mesazhi me rezultatin e konvertuar
+sipas $KOHAEMBERRITJES.$ i cili na jep shumen e fituar, ku llogarite qe per shpejtesi $50\frac{km}{h}$ dhe per rrugen qe e ka japur klineti sa do te jete koha e shprehur ne $sek$.
+\end{itemize}
+\end{enumerate}
+\newpage
+\subsubsection{SQRT}
+\begin{lstlisting}
+#SQRT funksioni
+def SQRT(numri) :
+      num = float(numri)
+      num_sqrt = num ** 0.5
+      pergjigja = "Rrenja katrore: " + str(num_sqrt) 
+      return pergjigja
+#return pergjigja e cila na jep rrnejen katrore te nje numri
+\end{lstlisting}
+
+\begin{enumerate}
+\item Kerksa:
+
+\begin{itemize}
+\item $SQRT$
+\end{itemize}
+\item Aksioni:
+\begin{itemize}
+\item $SQRT$ funksioni qe pret te shkruhet nje numer
+\end{itemize}
+\item Pergjigja:
+\begin{itemize}
+\item Numër i plotë kthehet ne rrenje katrore p.sh numeri 9 kthen si
+rezultat 3
+\end{itemize}
+\item Shtjellmi i kodit:
+\begin{itemize}
+\item Si fillim shkruhet startohet serveri dhe me pas klienti.Me pas
+shkruhet kerkesa $SQRT$ funksioni. Nwse nuk ka ndonje
+problem gjat dergimit te mesazhit,  do te paraqitet
+mesazhi me rezultatin e konvertuar sipas $SQRT$ funksioni.
+\end{itemize}
+\end{enumerate}
+\newpage
+\section{Konkluzionet}
+Gjate punimit te  ketij projekti kam kuptuar mire protokollet si \textcolor{blue}{$TCP$}/\textcolor{blue}{$UDP$} dhe operimin e tyre permes socketave, menyren se si lidhet nje server me klient, portet, thread-at, disa librari te gatshme te klasave te pythonit gje per te cilat nuk isha i informuar me pare e shume gjera te reja.Sfida e madhe gjate kesaj pune ishte gjuha $python$ edhe pse nuk ishte hera ime e pare me kete gjuhe por per shkak te mungeses se \textbf{\{\}} dhe \textbf{()} e qe konsideroj si te "mete"  te kesaj gjuhe  me ka shkatuar pengesa gjate punes, por nese do te ekzistonin ato simbole besoj qe do ishte me e lehte puna.
+\vspace*{2cm}
+\section{Burimet e perdorura}
+Krahas asaj qe eshte na ofruar ne ushtrime dhe ne ligjerata kemi perdorur edhe keto burime:
+\begin{itemize}
+\item \url{http://stackoverflow.com/}
+\item \url{https://www.w3schools.com/}
+\item \url{https://www.youtube.com/}
+
+\end{itemize}
+
+\end{document}
+
+  
+
+
+
