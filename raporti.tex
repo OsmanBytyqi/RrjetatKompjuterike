@@ -64,6 +64,14 @@
   breakatwhitespace=true,
   tabsize=3
 }
+\newenvironment{bash}{
+    
+   \lstset{basicstyle=\ttfamily,
+  showstringspaces=false,
+  commentstyle=\color{red},
+  keywordstyle=\color{blue}
+}
+}
 
 
 
@@ -200,6 +208,14 @@ def IP(para):
     return para[0]
     #return paramteri
 \end{lstlisting}
+\vspace*{1cm}
+\noindent Consola na dalje:
+\begin{lstlisting}[language=bash]
+#osmani@osmani:~/Desktop/root$
+Shkruani kerkesen, nese nuk deshironi te vazhdoni shtypni stop: #IP
+Te dhenat e qe u pranuan nga serveri: # 127.0.0.1
+\end{lstlisting}
+
 
 \begin{enumerate}
 \item Kerkesa:
@@ -233,6 +249,16 @@ def NRPORTI(para):
     return para[1]
     #return parametrin
 \end{lstlisting}
+\vspace*{1cm}
+\noindent Consola ne dalje:
+\begin{lstlisting}[language=bash]
+#osmani@osmani:~/Desktop/root$
+Shkruani kerkesen, nese nuk deshironi te vazhdoni shtypni stop: # NRPORTI
+Te dhenat e qe u pranuan nga serveri:  # 39128
+
+\end{lstlisting}
+
+
 \begin{enumerate}
 \item Kerkesa:
 \begin{itemize}
@@ -273,6 +299,13 @@ def NUMERO(para):
     # dhe ne fund return x dhe y pas inkremntit
 
 \end{lstlisting}
+\vspace*{1cm}
+\noindent Consola ne dalje:
+\begin{lstlisting}
+#osmani@osmani:~/Desktop/root$
+Shkruani kerkesen, nese nuk deshironi te vazhdoni shtypni stop:# NUMERO osman
+Te dhenat e qe u pranuan nga serveri: # ('Zanore :2', 'Bashketingellore : 3')
+\end{lstlisting}
 \begin{enumerate}
 \item Kerkesa:
 \begin{itemize}
@@ -302,6 +335,14 @@ def ANASJELLTAS(para):
         fjala = i +fjala
     return fjala
     #return fjalen e cila bohet reverse
+\end{lstlisting}
+\vspace*{1cm}
+\noindent Consola ne dalje:
+\begin{lstlisting}
+#osmani@osmani:~/Desktop/root$
+Shkruani kerkesen, nese nuk deshironi te vazhdoni shtypni stop: # ANASJELLTAS OSMAN
+Te dhenat e qe u pranuan nga serveri:  # NAMSO
+
 \end{lstlisting}
 \begin{enumerate}
 \item Kerkesa:
@@ -335,6 +376,15 @@ def ANASJELLTAS(para):
     return y
 
 \end{lstlisting}
+\vspace{1cm}
+\noindent Consola ne dalje:
+\begin{lstlisting}
+#osmani@osmani:~/Desktop/root$
+Shkruani kerkesen, nese nuk deshironi te vazhdoni shtypni stop: # PALINDROME OKEJ
+Te dhenat e qe u pranuan nga serveri: # teksti nuk eshte polindrom
+
+\end{lstlisting}
+
 \begin{enumerate}
 \item Kerkesa:
 
@@ -366,6 +416,15 @@ def KOHA():
     return y
 
 \end{lstlisting}
+\vspace*{1cm}
+\noindent Consola na dalje:
+\begin{lstlisting}
+#osmani@osmani:~/Desktop/root$
+Shkruani kerkesen, nese nuk deshironi te vazhdoni shtypni stop:# KOHA
+Te dhenat nga serveri:#Koha aktuale ne pasijen tuaj eshte :2021-05-01 14:38:05.756780
+
+\end{lstlisting}
+
 \begin{enumerate}
 \item Kerkesa:
 \begin{itemize}
@@ -395,6 +454,15 @@ def LOJA():
     y = "Numra te cfaredoshem ne rangun [1,35] : " + str(x)
     return y
 \end{lstlisting}
+\vspace*{1cm}
+\noindent Consola ne dalje:
+\begin{lstlisting}
+#osmani@osmani:~/Desktop/root$
+Shkruani kerkesen, nese nuk deshironi te vazhdoni shtypni stop:# LOJA
+Te dhenat nga serveri:#  Numra te cfaredoshem ne rangun [1,35] : [15, 9, 31, 16, 3]
+
+\end{lstlisting}
+
 \begin{enumerate}
 \item Kerkesa:
 \begin{itemize}
@@ -426,6 +494,16 @@ def GCF(a, b):
         return GCF(b, a % b) 
         #% moduli apo mbetja nga pjestimi 
 \end{lstlisting}
+\vspace*{1cm}
+\noindent Consola ne dalje
+\begin{lstlisting}
+#osmani@osmani:~/Desktop/root$
+Shkruani kerkesen, nese nuk deshironi te vazhdoni shtypni stop:# GCF 3 5
+Te dhenat e qe u pranuan nga serveri: # 1
+
+
+\end{lstlisting}
+
 
 \begin{enumerate}
 \item Kerkesa:
@@ -465,6 +543,15 @@ def KONVERTO(a, b):
         return y
         #return y ne fund
 \end{lstlisting}
+\vspace{1cm}
+\noindent Consola ne dalje:
+\begin{lstlisting}
+#osmani@osmani:~/Desktop/root$
+Shkruani kerkesen, nese nuk deshironi te vazhdoni shtypni stop:# KONVERTO CMTOINCH 5
+Te dhenat e qe u pranuan nga serveri:#  0.164inch
+
+\end{lstlisting}
+
 \begin{enumerate}
 \item Kerkesa:
 \begin{itemize}
@@ -502,6 +589,14 @@ def KOHAEMBERRITJES(num):
         return pergjigja
         #return pergjigja e cila eshte e barabart me shpjetesine e llog
 
+\end{lstlisting}
+\vspace{1cm}
+\noindent Consola ne dalje:
+\begin{lstlisting}
+#osmani@osmani:~/Desktop/root$
+Shkruani kerkesen, nese nuk deshironi te vazhdoni shtypni stop: #KOHAEMBERRITJES 19
+Te dhenatnga serveri:#Per shpejtesi 50 km/h dhe per rrugen 19.0 metra koha e mberritjes eshte 1.3679 sekonda
+
 
 \end{lstlisting}
 \begin{enumerate}
@@ -534,6 +629,16 @@ def SQRT(numri) :
       pergjigja = "Rrenja katrore: " + str(num_sqrt) 
       return pergjigja
 #return pergjigja e cila na jep rrnejen katrore te nje numri
+\end{lstlisting}
+\vspace{1cm}
+\noindent Consola ne dalje:
+\begin{lstlisting}
+#osmani@osmani:~/Desktop/root$
+Shkruani kerkesen, nese nuk deshironi te vazhdoni shtypni stop:# SQRT 4
+Te dhenat e qe u pranuan nga serveri:  # Rrenja katrore: 2.0
+
+
+
 \end{lstlisting}
 
 \begin{enumerate}
