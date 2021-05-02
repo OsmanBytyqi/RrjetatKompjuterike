@@ -22,7 +22,7 @@
 \renewcommand{\footrulewidth}{1pt}
 \fancyfoot[LE,RO]{\thepage}
 
-\usepackage[md]{titlesec}
+%\usepackage[md]{titlesec}
 \usepackage[albanian]{babel}
 \usepackage{hyperref}
 \hypersetup{
@@ -530,19 +530,19 @@ Te dhenat e qe u pranuan nga serveri: # 1
 #fun konvertuesi
 def KONVERTO(a, b):
     if a == "CMTOINCH": #cm->inch
-        x = 0.0328 * b
+        x = b/2.54
         y = "" + str(x) + "in"
         return y
     elif a == "INCHTTOCM":
-        x = b / 0.032808
+        x = b *2.54
         y = "" + str(x) + "cm"
         return y
     elif a == "KMTOMILES":
-        x = b * 0.62137
+        x = b/1.609
         y = "" + str(x) + "miles"
         return y
     elif a == "MILESTOKM":
-        x = b / 0.62137
+        x = b *1.6091
         y = "" + str(x) + "km"
         return y
         #return y ne fund
@@ -551,8 +551,9 @@ def KONVERTO(a, b):
 \noindent Consola ne dalje:
 \begin{lstlisting}
 #osmani@osmani:~/Desktop/root$
-Shkruani kerkesen, nese nuk deshironi te vazhdoni shtypni stop:# KONVERTO CMTOINCH 5
-Te dhenat e qe u pranuan nga serveri:#  0.164inch
+Shkruani kerkesen, nese nuk deshironi te vazhdoni shtypni stop: # konverto cmtoinch 2
+Te dhenat e qe u pranuan nga serveri:#  0.7874015748031495inch
+
 
 \end{lstlisting}
 
