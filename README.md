@@ -17,7 +17,7 @@
 
 ---
 
-### Qe te testoni serverin dhe klientin  ndjekeni keta hapa:
+### Qe ta testoni serverin dhe klientin  ndjekeni keta hapa:
 
  ```sh
  git clone git@github.com:OsmanBytyqi/RrjetatKompjuterikegit
