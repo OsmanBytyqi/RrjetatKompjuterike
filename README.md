@@ -26,8 +26,7 @@
 ```sh
 cd RrjetatKompjuterike/root/
 ```
-> Krijoni nje virtual environment virtual environment:
-
+> Krijoni nje virtual environment 
 ```
 python3 -m venv venv
 ```
