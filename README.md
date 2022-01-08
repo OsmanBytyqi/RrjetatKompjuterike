@@ -30,7 +30,7 @@ cd RrjetatKompjuterike/root/
 ```
 python3 -m venv venv
 ```
-> Dhe ne fund instaloni paketatat e nevojshme:
+> Dhe ne fund instaloni paketat e nevojshme:
 
 ```
 pip3 install -r requirements.txt
